@@ -28,11 +28,10 @@ while True:
         main_data2 = res2.json()['summary']
         initial2 = list(map(lambda x: (x['areaNo'],x['lockSeatCntlk'],x['realSeatCntlk']),main_data2))
 
-        if initial1 == initial2 :
-            continue
-        else :
+        if initial1 != initial2 :
             after = list(set(initial2)-set(initial1))
             webhook.send(f"{formatted_time} - {after}")
+       
             
     except Exception as e:
             print("error")                
