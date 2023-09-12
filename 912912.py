@@ -23,7 +23,7 @@ while True:
         res1 = requests.get(url, headers=headers)
         main_data1 = res1.json()['summary']
         initial1 = list(map(lambda x: (x['areaNo'],x['lockSeatCntlk'],x['realSeatCntlk']),main_data1))
-        time.sleep(0.3)
+        time.sleep(0.5)
         res2 = requests.get(url, headers=headers)
         main_data2 = res2.json()['summary']
         initial2 = list(map(lambda x: (x['areaNo'],x['lockSeatCntlk'],x['realSeatCntlk']),main_data2))
